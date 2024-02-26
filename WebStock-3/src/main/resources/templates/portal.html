@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Página de Inicio - Control de Stock</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/CSS/indexStyle.css}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+	<h1>Bienvendio a Control de Stock</h1>
+	<nav>
+		<ul>
+			<li><a th:href="@{/portal}" class="btn-primary">Inicio</a></li>
+			<li sec:authorize="hasAnyRole('USER', 'ADMIN')"><a th:href="@{/portal/listado}" class="btn-primary">Listado
+					de Productos</a></li>
+
+			<li sec:authorize="hasRole('ADMIN')"><a th:href="@{/portal/registro}" class="btn-primary">Registrar Nuevo Producto</a></li>
+			
+
+			<li>
+				<form th:action="@{/logout}" method="post" class="form-logout">
+					<button type="submit" class="cerrar" title="Cerrar Sesion"><i
+							class="fas fa-sign-out-alt"></i></button>
+				</form>
+			</li>
+		</ul>
+	</nav>
+	<div class="main-content">
+
+	</div>
+	<footer>
+		<p>© 2023 Control de Stock - Todos los derechos reservados</p>
+	</footer>
+</body>
+
+</html>

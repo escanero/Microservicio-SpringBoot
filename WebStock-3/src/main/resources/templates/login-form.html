@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>LogIn - Control de Stock</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/CSS/loginStyle.css}">
+
+</head>
+
+<body>
+	<h1>Control de Stock</h1>
+	<nav>
+		 
+		<ul>
+		
+		</ul>
+	</nav>
+	 <h2>Login</h2>
+	 <div class="login-container">
+      
+        <form th:action="@{/login}" method="post">
+            <div class="form-group">
+				<div class="mensajes">
+				 <p th:if="${param.error}" class="mensajeS">
+                Invalid username or password.
+            </p>
+            <p th:if="${param.logout}" class="mensajeL">
+                You have been logged out.
+            </p>
+            </div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required autofocus />
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn">Login</button>
+            </div>
+           
+        </form>
+    </div>
+	<footer>
+		<p>© 2023 Control de Stock - Todos los derechos reservados</p>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+		body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333; 
+}
+
+.table {
+    width: 90%;
+    margin: 50px auto; 
+    border-collapse: collapse; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); 
+     
+    
+}
+h1{
+	margin-top:20px;
+	text-align: center;
+	 color: #555;
+}
+nav {
+    background-color: #2a2f33; 
+    padding: 0.5rem 0;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 0; 
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    margin-left: 100px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #1abc9c; 
+}
+.cerrar {
+    margin-left: 950%;
+    border-radius: 50px;
+    background-color: red;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+}
+
+.cerrar:hover {
+    transform: scale(1.7); /* Hace que el botón sea un 10% más grande al hacer hover */
+}
+
+
+
+.table thead th {
+    background-color: #2a2f33;
+    color: #f7f7f7;
+    padding: 10px;
+    text-align: left;
+   
+}
+
+.table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc; 
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+
+.table tbody tr:hover {
+    background-color: #f4f4f6; 
+}
+
+
+
+
+.search-container {
+    width: 90%;
+    margin: 20px auto;
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.search-container div {
+    margin: 5px;
+}
+
+.search-container label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.search-container input[type="text"],
+.search-container select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.search-container button {
+    background-color: #2a2f33; 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #1abc9c; 
+}
+
+.table td .btn {
+    background-color: #1abc9c; 
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none; 
+    border-radius: 4px;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.table td .btn:hover {
+    background-color: #16a085;
+    }
+
+.table td button {
+    background-color: #e74c3c; 
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.table td button:hover {
+    background-color: #c0392b; 
+}
+
+
+

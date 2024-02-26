@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${producto.id != null ? 'Actualizar Producto' : 'Agregar Nuevo Producto'}">Formulario de Producto</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/CSS/formularioStyle.css}">
+    <script th:src="@{/javaScript/productoScript.js}"></script>
+</head>
+<body>
+
+<h1 th:text="${producto.id != null ? 'Actualizar Producto' : 'Agregar Nuevo Producto'}">Formulario de Producto</h1>
+
+<nav>
+    <ul>
+        <li><a th:href="@{/portal}" class="btn-primary">Inicio</a></li>
+        <li><a th:href="@{/portal/listado}" class="btn-primary">Listado de Productos</a></li>
+        <li><a th:href="@{/portal/registro}" class="btn-primary">Registrar Nuevo Producto</a></li>
+    </ul>
+</nav>
+
+<form id="formularioProducto" th:action="@{/producto}" th:object="${producto}" method="post">
+    <input type="hidden" id="productoId" th:field="*{id}" />
+
+    <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" th:field="*{nombre}" required maxlength="50" />
+        
+    </div>
+    <div>
+        <label for="cantidadEnStock">Cantidad en Stock:</label>
+       <input type="number" id="cantidadEnStock" th:field="*{cantidadEnStock}" required min="0" max="100000" />
+
+    </div>
+    <div>
+        <label for="umbralMinimo">Umbral Mínimo:</label>
+      <input type="number" id="umbralMinimo" th:field="*{umbralMinimo}" required min="0" max="10000" />
+
+    </div>
+    <div>
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" th:field="*{precio}" step="0.01" required min="0" max="100000" />
+
+    </div>
+    <div>
+        <label for="proveedor">Proveedor:</label>
+       <input type="text" id="proveedor" th:field="*{proveedor}" maxlength="100" />
+
+    </div>
+    <div>
+        <label for="tipo">Tipo de Producto:</label>
+        <select id="tipo" th:field="*{tipo}" required>
+            <option value="ELECTRONICO">Electrónico</option>
+            <option value="ROPA">Ropa</option>
+            <option value="ALIMENTO">Alimento</option>
+            <option value="HOGAR">Hogar</option>
+            <option value="JUGUETE">Juguete</option>
+        </select>
+    </div>
+
+    <p><button type="button" onclick="enviarProducto()">Registrar/Actualizar</button></p>
+    <div id="errores" style="color: red;"></div>
+</form>
+
+<div id="mensajeExito" style="display:none;">
+    Producto registrado/actualizado con éxito
+</div>
+
+</body>
+</html>
+
+

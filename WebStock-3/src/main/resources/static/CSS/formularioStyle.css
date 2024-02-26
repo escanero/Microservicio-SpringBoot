@@ -1,0 +1,115 @@
+		body {
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f7f7f7;
+			color: #333;
+		}
+
+		h1 {
+			margin-top: 20px;
+			text-align: center;
+			color: #555;
+		}
+
+		nav {
+			background-color: #2a2f33;
+			padding: 0.5rem 0;
+		}
+
+		nav ul {
+			list-style: none;
+			padding-left: 0;
+			display: flex;
+			justify-content: center;
+		}
+
+		nav ul li {
+			margin: 0 1rem;
+		}
+
+		nav ul li a {
+			color: #fff;
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 1rem;
+			transition: color 0.3s ease;
+			margin-left: 100px;
+		}
+
+		nav ul li a:hover,
+		nav ul li a:focus {
+			color: #1abc9c;
+		}
+
+		.table thead th {
+			background-color: #2a2f33;
+			color: #f7f7f7;
+			padding: 10px;
+			text-align: left;
+
+		}
+
+		form {
+			width: 300px;
+			margin: 50px auto;
+			margin-bottom: 75px;
+			background: #fff;
+			padding: 20px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			border-radius: 8px;
+		}
+
+		form div {
+			margin-bottom: 15px;
+		}
+
+		form div label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		form div input[type="text"],
+		form div input[type="number"],
+		form div select {
+			width: 80%;
+			padding: 10px;
+			border-radius: 4px;
+			border: 1px solid #ccc;
+
+		}
+
+		form div select {
+			width: 84%;
+			padding: 10px;
+			border-radius: 4px;
+			background: white;
+		}
+
+		button {
+			background-color: #2a2f33;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 4px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+			margin-top: 10px;
+		}
+
+		button:hover {
+			background-color: #2980b9;
+		}
+
+	
+		
+		button:hover {
+			background-color: #1abc9c;
+		}
+		
+		#mensajeExito{
+			text-align: center;
+			margin-top: -670px;
+			color:#1abc9c ;
+			font-size: x-large;
+		}

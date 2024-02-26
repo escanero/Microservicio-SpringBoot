@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/CSS/listadoStyle.css}">
+     <script th:src="@{/javaScript/listadoScript.js}"></script>
+</head>
+<body>
+<h1>Listado de Productos</h1>
+  	<nav>
+		<ul>
+			<li><a th:href="@{/portal}" class="btn-primary">Inicio</a></li>
+			<li sec:authorize="hasAnyRole('USER', 'ADMIN')"><a th:href="@{/portal/listado}" class="btn-primary">Listado
+					de Productos</a></li>
+
+			<li sec:authorize="hasRole('ADMIN')"><a th:href="@{/portal/registro}" class="btn-primary">Registrar Nuevo Producto</a></li>
+
+			<li>
+				<form th:action="@{/logout}" method="post" class="form-logout">
+					<button type="submit" class="cerrar" title="Cerrar Sesion"><i
+							class="fas fa-sign-out-alt"></i></button>
+				</form>
+			</li>
+		</ul>
+	</nav>
+<div class="search-container">
+    <label for="tipoBusqueda">Buscar por Tipo:</label>
+    <select id="tipoBusqueda">
+        <option value="ELECTRONICO">Electrónico</option>
+        <option value="ROPA">Ropa</option>
+        <option value="ALIMENTO">Alimento</option>
+        <option value="HOGAR">Hogar</option>
+        <option value="JUGUETE">Juguete</option>
+    </select>
+    <button onclick="buscarProductosPorTipo()">Buscar</button>
+    
+</div>
+
+<div class="search-container">
+    <label for="proveedorBusqueda">Proveedor:</label>
+    <input type="text" id="proveedorBusqueda" placeholder="Buscar por proveedor...">
+    <button onclick="buscarProductosPorProveedor()">Buscar por Proveedor</button>
+</div>
+
+<input type="hidden" id="userRole" th:value="${#authentication.authorities[0].authority}" />
+
+
+<div id="stockAlertMessage" style="color: red; margin-top: 20px; text-align: center;"></div>
+<div id="mensajeEliminacion" style="color: green; text-align: center;"></div>
+<table  id="productosTable" class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Cantidad de Stock</th>
+            <th>Umbral Mínimo</th>
+            <th>Precio</th>
+            <th>Proveedor</th>
+            <th>Tipo Producto</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+      
+    </tbody>
+</table>
+
+
+  
+</body>
+</html>
